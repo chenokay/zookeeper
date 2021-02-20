@@ -153,6 +153,7 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
         return sw.toString();
     }
 
+	// 更具interval check，移除过期session
     @Override
     public void run() {
         try {
@@ -175,7 +176,7 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
         LOG.info("SessionTrackerImpl exited loop!");
     }
 
-	// 更新和客户端连接状态
+	// 更新和客户端连接状态,避免断开
 	// 并进行连接check
     public synchronized boolean touchSession(long sessionId, int timeout) {
         SessionImpl s = sessionsById.get(sessionId);
