@@ -25,6 +25,7 @@ import org.apache.zookeeper.util.ServiceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// 限流request
 /**
  * When enabled, the RequestThrottler limits the number of outstanding requests
  * currently submitted to the request processor pipeline. The throttler augments

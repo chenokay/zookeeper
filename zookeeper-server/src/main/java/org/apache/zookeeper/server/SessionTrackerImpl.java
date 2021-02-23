@@ -153,7 +153,7 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
         return sw.toString();
     }
 
-	// 更具interval check，移除过期session
+	// 根据interval check，移除过期session
     @Override
     public void run() {
         try {
